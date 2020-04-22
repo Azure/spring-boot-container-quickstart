@@ -10,6 +10,9 @@ FROM mcr.microsoft.com/java/jdk:8-zulu-centos
 # Set the working directory to '/opt/spring-boot' directory
 WORKDIR /opt/spring-boot
 
+# Download the Application Insights Agent JAR
+RUN curl -L -O https://github.com/microsoft/ApplicationInsights-Java/releases/download/3.0.0-PREVIEW.3/applicationinsights-agent-3.0.0-PREVIEW.3.jar
+
 # Expose the ports we're interested in
 EXPOSE 8080
 
@@ -23,7 +26,7 @@ ENTRYPOINT ["/opt/spring-boot/entrypoint.sh"]
 RUN chmod a+x entrypoint.sh
 
 # Set the default command to run on boot
-CMD ["java", "-jar", "spring-boot.jar"]
+CMD java $JAVA_AGENT -jar spring-boot.jar
 
 # Copy the JAR file
 COPY target/spring-boot-container-quickstart.jar /opt/spring-boot/spring-boot.jar 
