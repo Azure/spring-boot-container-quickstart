@@ -36,12 +36,6 @@ machine:
     cd spring-boot-container-quickstart
     ```
 
-1. Build the WAR file locally.
-
-    ```shell
-    mvn package
-    ```
-
 1. Build the docker image:
 
     ```bash
@@ -116,6 +110,11 @@ installed.
     ```bash
     az container delete -g ${RESOURCE_GROUP} -n ${REGISTRY_NAME} --yes
     ```
+
+## Note on the example application
+
+The Spring Boot Pet Clinic example is included as a JAR only artifact. For the
+sources see the [Spring PetClinic Sample Application GitHub repository](https://github.com/spring-projects/spring-petclinic)
 
 ## Contributing
 
