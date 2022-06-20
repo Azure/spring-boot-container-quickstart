@@ -17,7 +17,7 @@ RUN apt update && \
 EXPOSE 8080
 
 # Make Java 8 obey container resource limits, improve performance
-ENV JAVA_OPTS='-XX:+UnlockExperimentalVMOptions -XX:+UseCGroupMemoryLimitForHeap -XX:+UseG1GC -Djava.awt.headless=true'
+ENV JAVA_OPTS='-Djava.awt.headless=true'
 
 # Set the container up with an entrypoint so we can make sure any runtime
 # customizations happen at the appropriate time.
