@@ -5,7 +5,7 @@
 #
 # https://support.microsoft.com/en-us/help/4026305/sql-contact-microsoft-azure-support
 #
-FROM mcr.microsoft.com/java/jdk:8-zulu-ubuntu
+FROM mcr.microsoft.com/openjdk/jdk:8-ubuntu
 
 # Set the working directory to '/opt/spring-boot' directory
 WORKDIR /opt/spring-boot
