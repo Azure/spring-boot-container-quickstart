@@ -7,7 +7,7 @@ fi
 
 if [[ -n "$APPLICATIONINSIGHTS_CONNECTION_STRING" ]]; then
     echo 'Enabling Application Insights Java agent'
-    export JAVA_AGENT="-javaagent:/opt/spring-boot/applicationinsights-agent-3.0.0-PREVIEW.3.jar"
+    export JAVA_AGENT="-javaagent:/opt/spring-boot/applicationinsights-agent-3.5.1.jar"
 fi
 
 # Give control to the CMD in the Dockerfile
